@@ -1,8 +1,8 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 
+
 #Warna
-RED = (1.0, 0.0, 0.0)
 GREEN = (0.0, 1.0, 0.0)
 BLUE = (0.0, 0.0, 1.0)
 
@@ -17,6 +17,7 @@ degrees = {
 # Mencerminkan objek
 def mirror(iterable):
     return iterable + [(-v[0], v[1]) for v in iterable[::-1]]
+
 
 class Object(object):
     mode = GL_POLYGON
@@ -43,7 +44,8 @@ class Object(object):
                 glTranslated(x, y, 0)
                 item.draw()
 
-class Road(Object):
+
+class Obstacle(Object):
     color = GREEN
     vertices = [
         (0, 40), 
@@ -52,7 +54,8 @@ class Road(Object):
         (80, 40)
     ]
 
-class Road2(Object):
+
+class Obstacle2(Object):
     color = GREEN
     vertices = [
         (40, 140),
@@ -61,7 +64,8 @@ class Road2(Object):
         (40, 300)
     ]
 
-class Road3(Object):
+
+class Obstacle3(Object):
     color = GREEN
     vertices = [
         (120, 0),
@@ -70,7 +74,8 @@ class Road3(Object):
         (120, 100)
     ]
 
-class Road4(Object):
+
+class Obstacle4(Object):
     color = GREEN
     vertices = [
         (440, 40),
@@ -79,7 +84,8 @@ class Road4(Object):
         (440, 200)
     ]
 
-class Road5(Object):
+
+class Obstacle5(Object):
     color = GREEN
     vertices = [
         (240, 140),
@@ -88,7 +94,8 @@ class Road5(Object):
         (240, 260)
     ]
 
-class Road6(Object):
+
+class Obstacle6(Object):
     color = GREEN
     vertices = [
         (500, 240),
@@ -97,7 +104,8 @@ class Road6(Object):
         (500, 400)
     ]
 
-class Road7(Object):
+
+class Obstacle7(Object):
     color = GREEN
     vertices = [
         (350, 240),
@@ -106,7 +114,8 @@ class Road7(Object):
         (350, 400)
     ]
 
-class Road8(Object):
+
+class Obstacle8(Object):
     color = GREEN
     vertices = [
         (460, 440),
@@ -115,7 +124,8 @@ class Road8(Object):
         (460, 560)
     ]
 
-class Road9(Object):
+
+class Obstacle9(Object):
     color = GREEN
     vertices = [
         (240, 300),
@@ -124,7 +134,8 @@ class Road9(Object):
         (240, 400)
     ]
 
-class Road10(Object):
+
+class Obstacle10(Object):
     color = GREEN
     vertices = [
         (240, 340),
@@ -133,7 +144,8 @@ class Road10(Object):
         (240, 560)
     ]
 
-class Road11(Object):
+
+class Obstacle11(Object):
     color = GREEN
     vertices = [
         (280, 440),
@@ -142,7 +154,8 @@ class Road11(Object):
         (280, 600)
     ]
 
-class Road12(Object):
+
+class Obstacle12(Object):
     color = GREEN
     vertices = [
         (0, 340),
@@ -151,7 +164,8 @@ class Road12(Object):
         (0, 420)
     ]
 
-class Road13(Object):
+
+class Obstacle13(Object):
     color = GREEN
     vertices = [
         (0, 460),
@@ -159,6 +173,7 @@ class Road13(Object):
         (60, 600),
         (0, 600)
     ]
+
 
 class Wheel(Object):
     color = (1, 1, 1)
@@ -177,6 +192,7 @@ class Car(Object):
         (-30, 15),
         (-30, 5),
     ])
+    
     #Posisi roda
     objects = [
         (Wheel(), -20, 5),
@@ -200,9 +216,4 @@ class Car(Object):
         glTranslated(-c[0], -c[1], 0)
         super(Car, self).draw()
 
-
-class Arrow(Object):
-    color = RED #Tujuan (Finish)
-    vertices = [
-        (-20, 20),
-    ]
+        
