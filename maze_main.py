@@ -115,7 +115,7 @@ if __name__ == '__main__':
 
     glutInitWindowPosition(0, 0)
     glutInitWindowSize(600, 600)
-    glutCreateWindow('Driver')
+    glutCreateWindow('Maze Car')
 
     #callbacks
     glutDisplayFunc(display)
